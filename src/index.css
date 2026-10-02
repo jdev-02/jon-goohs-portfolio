@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f0ede4;
+  --bg-elevated: #e8e3d5;
+  --fg: #1a1916;
+  --muted: #6e6b60;
+  --line: #d9d3c2;
+  --accent: #c2410c;
+  --accent-2: #4d7c5f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15140f;
+    --bg-elevated: #1e1c15;
+    --fg: #ece8da;
+    --muted: #938e7c;
+    --line: #322e23;
+    --accent: #e07a4e;
+    --accent-2: #7fae8f;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #15140f;
+  --bg-elevated: #1e1c15;
+  --fg: #ece8da;
+  --muted: #938e7c;
+  --line: #322e23;
+  --accent: #e07a4e;
+  --accent-2: #7fae8f;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  /* Eases the light/dark swap itself (not an extra animation, a guard
+     against the abrupt brightness jump a hard color-var flip reads as). */
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Reduced motion: collapse every transition/animation on the page to
+   near-instant rather than removing feedback entirely -- a user still
+   sees the state change, just without the motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
