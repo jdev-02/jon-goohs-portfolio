@@ -5,8 +5,9 @@ import { FOCUS_RING } from "../styles";
 const NAV = [
   { to: "/", label: "Home", num: "00" },
   { to: "/projects", label: "Projects", num: "01" },
-  { to: "/experience", label: "Experience", num: "02" },
-  { to: "/contact", label: "Contact", num: "03" },
+  { to: "/publications", label: "Publications", num: "02" },
+  { to: "/experience", label: "Experience", num: "03" },
+  { to: "/contact", label: "Contact", num: "04" },
 ];
 
 function navLinkClass(active: boolean) {

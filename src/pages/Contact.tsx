@@ -20,7 +20,7 @@ const GOOSELINE_URL: string | null = null; // Jon: Gooseline Solutions' live URL
 export default function Contact() {
   return (
     <div>
-      <p className="font-mono text-xs text-muted">// 03 contact</p>
+      <p className="font-mono text-xs text-muted">// 04 contact</p>
       <h1 className="mt-3 font-display text-3xl font-semibold md:text-4xl">
         Contact
       </h1>
